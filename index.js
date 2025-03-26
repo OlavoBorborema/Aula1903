@@ -3,11 +3,11 @@ const app = express();
 const port = 3000;
 
 app.get('/', (request, response)=> {
-    response.send("Òla Codespace!!!");
+    response.send("Olá Codespace!!!");
 });
 
-app.get('/mensagem', (request, response) => {
-    response.send('Boa Tarde')
+app.get('/mensagem/:nome', (request, response) => {
+    response.send('Boa Tarde '+ request.params['nome'])
 })
 
 app.listen(port, () => {
